@@ -1,0 +1,50 @@
+# Magazine ransom-note sheet: 104 glyphs, each a torn paper tile on black.
+#
+# The sheet's polarity flips tile to tile (white-on-red beside black-on-cream),
+# which is why ink.polarity is "auto" — a single global threshold cannot read it.
+
+[font]
+family  = "MagazineCutout"
+style   = "Regular"
+version = "1.0"
+
+[sheet]
+image = "magazine.png"
+rows  = 8
+cols  = 13
+layout = """
+ABCDEFGHIJKLM
+NOPQRSTUVWXYZ
+abcdefghijklm
+nopqrstuvwxyz
+0123456789.,!
+?'";:(){}[]@&
+#$%^*+=_-<>/\\
+|~`€£¥¢©®™÷±×
+"""
+
+[sheet.grid]
+mode         = "auto"
+ignore_top   = 85    # skip the "MAGAZINE CUTOUT FONT" title bar
+bg_threshold = 60
+pad          = 3
+
+[ink]
+polarity = "auto"
+isolate  = true
+
+[trace]
+upscale      = 4
+alphamax     = 1.0
+opttolerance = 0.2
+turdsize     = 8
+
+[metrics]
+cap_height     = 700
+x_height       = 500
+side_bearing   = 40
+space_width    = 260
+descender_drop = 150
+
+[output]
+dir = "fonts"

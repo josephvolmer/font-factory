@@ -1,0 +1,6 @@
+# Pure Python — no system binaries required.
+opencv-python
+numpy
+Pillow
+fonttools
+potracer

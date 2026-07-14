@@ -1,0 +1,46 @@
+# A plain serif sheet: 40 glyphs, black ink on cream tiles, white background.
+#
+# Kept as a second worked example because it stresses the factory differently
+# from magazine.toml: a different grid, uppercase only, no title bar, and tiles
+# that are *darker* than the background rather than brighter.
+
+[font]
+family  = "TestSerif"
+style   = "Regular"
+version = "1.0"
+
+[sheet]
+image = "serif.png"
+rows  = 5
+cols  = 8
+layout = """
+ABCDEFGH
+IJKLMNOP
+QRSTUVWX
+YZ012345
+6789.,!?
+"""
+
+[sheet.grid]
+mode       = "auto"
+background = "light"   # cream tiles on a white page: the tiles are the dark bits
+pad        = 3
+
+[ink]
+polarity = "dark_on_light"   # uniform sheet, so no need to guess per tile
+isolate  = true
+
+[trace]
+upscale      = 4
+alphamax     = 1.0
+opttolerance = 0.2
+turdsize     = 8
+
+[metrics]
+cap_height   = 700
+x_height     = 700   # no lowercase on this sheet, so nothing to shrink
+side_bearing = 40
+space_width  = 260
+
+[output]
+dir = "fonts"
